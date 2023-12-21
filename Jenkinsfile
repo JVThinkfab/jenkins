@@ -3,17 +3,15 @@ pipeline {
   stages {
     stage('stage1') {
       steps {
-        sh '''if id "$USERNAME" &>/dev/null; then
-    echo "true"
-else
-    echo "false"
-fi
-'''
+        sh 'date'
       }
     }
 
-  }
-  environment {
-    USERNAME = 'user'
+    stage('stage2') {
+      steps {
+        sh 'mkdir F1'
+      }
+    }
+
   }
 }
